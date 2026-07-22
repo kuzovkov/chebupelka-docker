@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+node /chebupelka-node/index.js "$@"

@@ -1,0 +1,13 @@
+{
+  "name": "chebupelka-node",
+  "version": "0.1.0",
+  "description": "Minimal coding agent — Node.js port",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

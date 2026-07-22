@@ -1,0 +1,24 @@
+x-anchors:
+  args: &current-user-info
+    user: ${USER:-ubuntu}
+    user_id: ${USER_ID:-1000}
+    group_id: ${GROUP_ID:-1001}
+
+services:
+  app:
+    image: chebupelka
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: *current-user-info
+    volumes:
+      - ./chebupelka:/chebupelka
+      - ./chebupelka-php:/chebupelka-php
+      - ./chebupelka-node:/chebupelka-node
+      - ./data:/data
+    environment:
+      UV_LINK_MODE: copy
+#    entrypoint: ""
+    ports:
+      - 8000:8000
+       

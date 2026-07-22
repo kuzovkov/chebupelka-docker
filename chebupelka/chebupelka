@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export VIRTUAL_ENV=/chebupelka/.venv
+uv run /chebupelka/chebupelka.py $@
