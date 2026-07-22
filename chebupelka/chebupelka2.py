@@ -18,8 +18,7 @@ SYSTEM_PROMPT = """\
 You are a coding agent. Your job is to help the user with programming tasks.
 
 You have access to built-in tool: `bash` — which executes shell commands and returns stdout/stderr.
-Also you have access to tools from plugged MCP servers, full list of them will be provided 
-as "Allowed tools"
+Also you have access to tools from plugged MCP servers.
 
 Workflow:
 1. Plan what needs to be done.
@@ -134,7 +133,7 @@ def call_llm(messages, tools):
 
 async def agent_loop(user_message: str, tools: list, mcp_tool_map: dict) -> None:
     messages: list[dict[str, object]] = [
-        {"role": "system", "content": SYSTEM_PROMPT +  f". Allowed tools: {str(tools)}"}, 
+        {"role": "system", "content": SYSTEM_PROMPT}, 
         {"role": "user", "content": user_message}
     ]
     for turn in range(1, MAX_TURNS + 1):
